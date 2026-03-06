@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  user-service:
+    build: ./user-service
+    container_name: user-service-new
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo    
+
+  task-service:
+    build: ./task-service
+    container_name: task-service-new
+    ports:
+      - "3002:3002"
+    depends_on:
+      - mongo        
+
+volumes:
+  mongo_data:
