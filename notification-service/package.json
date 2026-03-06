@@ -1,5 +1,5 @@
 {
-  "name": "task-service",
+  "name": "notification-service",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,6 @@
   "dependencies": {
     "amqplib": "^0.10.9",
     "body-parser": "^2.2.2",
-    "express": "^5.2.1",
-    "mongoose": "^8.23.0"
+    "express": "^5.2.1"
   }
 }
